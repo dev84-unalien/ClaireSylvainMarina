@@ -1,0 +1,36 @@
+
+.name{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color:red;
+    border:solid black 1px;
+    width: 15vw;
+    height:5vh;
+    margin-left: 5%;
+    display: flex;
+    align-items: center;
+
+}
+    
+#kirby{
+margin-left: 10vw;
+height: 45vh;
+}
+
+#VS{
+
+	border: solid rgb(10, 10, 10) 2px;
+    border-radius: 50%;
+    background-color: rgb(145, 232, 243);
+
+    font-weight: bold;
+    height: 100px;
+    width: 100px;
+   
+    margin-left: 45%;
+    margin-top: 15%;
+   
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
