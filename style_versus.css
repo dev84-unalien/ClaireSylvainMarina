@@ -1,0 +1,56 @@
+#content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(Override-Mech-City-Brawl.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 20vw;
+}
+#url,#nom, #pv, #pa, #ok{
+    margin-top: 2vw;
+}
+#trait{
+    width: 5px;
+    height: 50vh;
+    background-color: rgb(8, 6, 6);
+}
+p{
+    background-color: black;
+    border-radius: 5px;
+    color: rgb(241, 243, 235);
+    font-size: 1.5em;
+}
+#versus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#joueur1, #joueur2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.img1, .img2{
+    width: 8vw;
+    margin-top: 2vw;
+}
+#joueur2, .img2{
+    margin-left: 5vw;
+    
+}
