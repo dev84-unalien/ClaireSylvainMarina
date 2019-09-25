@@ -7,6 +7,7 @@ function recupDeDonnees() {
             result = JSON.parse(result);
             console.log(result); 
     },
+    
     error: function error(erreur) {
         alert("erreur");
     }
