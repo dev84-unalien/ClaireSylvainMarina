@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style_versus.css">
     <script src="../jquery-3.4.1.min.js"></script>
     <script src="marina_versus.js"></script>
-
     <title>Create</title>
 </head>
 
@@ -18,23 +17,29 @@
             <input type="text" name="nom" id="nom" placeholder="Nom">
             <input type="text" name="pv" id="pv" placeholder="Point de Vie">
             <input type="text" name="pa" id="pa" placeholder="Point d'Attaque">
-            <input type="button" name="ok" id="ok" value="OK">
+            <input type="button" name="ok" id="ok" value="OK" onclick="ajoutPerso()">
         </div>
         <div id="trait"></div>
         <div id="versus"><p>VS</p>
             <div id="player">
                 <div>
-                    <input type="text" name="joueur1" id="joueur1" placeholder="Joueur1">
-                    <img src="" alt="" class="img1">
+                    <select id="joueur1" onchange="selecImg1(this.value)">
+                        <!-- Personnage 1 -->
+                    </select>
+                    <div id="image1"></div>
                 </div>
                 <div>
-                    <input type="text" name="joueur2" id="joueur2" placeholder="Joueur2">
-                    <img src="" alt="" class="img2">
+                    <select id="joueur2" onchange="selecImg2(this.value)">
+                        <!-- Personnage 2 -->
+                    </select>
+                    <div id="image2"></div>
                 </div>
             </div>
             <a href="index.html"><input type="button" name="jouez" id="jouez" value="JOUEZ"></a>
         </div>
     </div>
 </body>
+
+<script src="sylvain_versus.js"></script>
 
 </html>

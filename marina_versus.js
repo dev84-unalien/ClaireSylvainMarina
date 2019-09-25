@@ -1,24 +1,24 @@
 
 // Ajouter un personnage
 function ajoutPerso() {
-
-    var nom = $(".ajout_nom_perso").val();
-    var image = $(".ajout_image_perso").val();
-    var pv = $(".ajout_pv_perso").val();
-    var pa = $(".ajout_pa_perso").val();
+    
+    var nom = $("#nom").val();
+    var url = $("#url").val();
+    var pv = $("#pv").val();
+    var pa = $("#pa").val();
 
     $.ajax({
         url: "http://localhost/ClaireSylvainMarina/create_versus.php",
         type: "POST",
         data: {
             nom: nom,
-            image: image,
+            url: url,
             pv: pv,
             pa: pa
         },
         success: function success(result) {
-            alert("Perso ajouté");
-            reload();
+            console.log(result);
+            // alert("Perso ajouté");
         },
         error: function error(erreur) {
             console.log("erreur");
