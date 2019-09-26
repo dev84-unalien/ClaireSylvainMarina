@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 let personnage1 = [];
 let personnage2 = [];
 
@@ -14,7 +13,7 @@ $(document).ready(function() {
 
     let perso2JSON = localStorage.getItem("personnage2");
     if (!perso2JSON) {
-      return;
+      return;}
 
     personnage2 = JSON.parse(perso2JSON); // Transforme le json en tableau JS
 
@@ -43,9 +42,18 @@ function fight() {
 
          round = true; }
 
-    if ( personnage1[0].pv >= 0 || personnage2[0].pv >= 0 ) {
-        console.log(personnage1[0].pv);
+    if ( personnage1[0].pv <= 0 || personnage2[0].pv <= 0 ) {
+
         clearInterval(myFight);
+
+        if ( personnage1[0].pv <= 0 ) {
+            $("#img1").css("display", "none");
+            $(".name1").html("MORT");
+        }
+        else {
+            $("#img2").css("display", "none");
+            $(".name2").html("MORT");
+        }
     }
 
 }
