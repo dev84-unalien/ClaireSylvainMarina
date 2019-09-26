@@ -64,7 +64,7 @@ function fight() {
         round = false;
     } else {
         // Voir dessus
-        personnage1[0].pv = personnage1[0].pv - Math.floor(Math.random() * (personnage1[0].pa - 0 + 1)) + 0;
+        personnage1[0].pv = personnage1[0].pv - Math.floor(Math.random() * (personnage2[0].pa - 0 + 1)) + 0;
         console.log( personnage1[0].pv );
 
         $("#health_2").prop("value", personnage2[0].pv);
