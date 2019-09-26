@@ -15,6 +15,9 @@ function getPersonnage() {
             personnage = JSON.parse(personnage);
             _personnages = personnage;
             var length = personnage.length;
+            
+            $("#image1").empty();
+            $("#image2").empty();
 
             $("#image1").append(` 
                 <img src="kirby.png" alt="" class="img1"></img>
@@ -89,4 +92,34 @@ function fight() {
   localStorage.setItem("personnage2", json2); // F12 -> Application -> localstorage
 
   location = "index.html";
+}
+
+
+// Ajouter un personnage
+function ajoutPerso() {
+    
+    var nom = $("#nom").val();
+    var url = $("#url").val();
+    var pv = $("#pv").val();
+    var pa = $("#pa").val();
+
+    $.ajax({
+        url: "http://localhost/ClaireSylvainMarina/create_versus.php",
+        type: "POST",
+        data: {
+            nom: nom,
+            url: url,
+            pv: pv,
+            pa: pa
+        },
+        success: function success(result) {
+            console.log(result);
+            // alert("Perso ajouté");
+        },
+        error: function error(erreur) {
+            console.log("erreur");
+        }
+    });
+
+    getPersonnage();
 }
