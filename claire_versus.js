@@ -53,7 +53,7 @@ function fight() {
     // Si round est "true" :
     if ( round ) {
         // Calcul les pv du personnage2 : pv actuel - pa reçu
-        personnage2[0].pv = personnage2[0].pv - personnage1[0].pa;
+        personnage2[0].pv = personnage2[0].pv - Math.floor(Math.random() * (personnage1[0].pa - 0 + 1)) + 0;
         // Affiche dans la console les pv actuels
         console.log( personnage2[0].pv );
 
@@ -64,7 +64,7 @@ function fight() {
         round = false;
     } else {
         // Voir dessus
-        personnage1[0].pv = personnage1[0].pv - personnage2[0].pa;
+        personnage1[0].pv = personnage1[0].pv - Math.floor(Math.random() * (personnage1[0].pa - 0 + 1)) + 0;
         console.log( personnage1[0].pv );
 
         $("#health_2").prop("value", personnage2[0].pv);
@@ -94,5 +94,5 @@ function fight() {
             $(".name2").html("DIED");
         }
     }
-
 }
+
