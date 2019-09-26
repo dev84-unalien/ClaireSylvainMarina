@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 let personnage1 = [];
 let personnage2 = [];
 
@@ -14,7 +15,7 @@ $(document).ready(function() {
     let perso2JSON = localStorage.getItem("personnage2");
     if (!perso2JSON) {
       return;
-    }
+
     personnage2 = JSON.parse(perso2JSON); // Transforme le json en tableau JS
 
     console.log(personnage2[0].url);
