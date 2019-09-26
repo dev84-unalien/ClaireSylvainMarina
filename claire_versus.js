@@ -48,11 +48,11 @@ function fight() {
 
         if ( personnage1[0].pv <= 0 ) {
             $("#img1").css("display", "none");
-            $(".name1").html("MORT");
+            $(".name1").html("DIED");
         }
         else {
             $("#img2").css("display", "none");
-            $(".name2").html("MORT");
+            $(".name2").html("DIED");
         }
     }
 
