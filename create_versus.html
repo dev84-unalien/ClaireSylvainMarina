@@ -23,19 +23,19 @@
         <div id="versus"><p>VS</p>
             <div id="player">
                 <div>
-                    <select id="joueur1" onchange="selecImg1(this.value)">
+                    <select id="joueur1" onchange="selecPersonnage1(this.value)">
                         <!-- Personnage 1 -->
                     </select>
                     <div id="image1"></div>
                 </div>
                 <div>
-                    <select id="joueur2" onchange="selecImg2(this.value)">
+                    <select id="joueur2" onchange="selecPersonnage2(this.value)">
                         <!-- Personnage 2 -->
                     </select>
                     <div id="image2"></div>
                 </div>
             </div>
-            <a href="index.html"><input type="button" name="jouez" id="jouez" value="JOUEZ"></a>
+            <input type="button" name="jouez" id="jouez" value="JOUEZ" onclick="launchFight()">
         </div>
     </div>
 </body>

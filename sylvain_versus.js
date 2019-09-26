@@ -1,3 +1,7 @@
+let _personnages = [];
+var newFight1 = {};
+var newFight2 = {};
+
 $(document).ready(getPersonnage());
 
 function getPersonnage() {
@@ -9,24 +13,25 @@ function getPersonnage() {
         success: function success(personnage) {
 
             personnage = JSON.parse(personnage);
+            _personnages = personnage;
             var length = personnage.length;
 
             $("#image1").append(` 
-                <img src="` + personnage[0].url + `" alt="" class="img1"></img>
+                <img src="kirby.png" alt="" class="img1"></img>
             `);
 
             $("#image2").append(` 
-                <img src="` + personnage[0].url + `" alt="" class="img2"></img>
+                <img src="kirby.png" alt="" class="img2"></img>
             `);
 
             for (var i = 0 ; i < length ; i++ ){
 
                 $("#joueur1").append(` 
-                    <option value="` + personnage[i].url + `">` + personnage[i].nom + `</option>                    
+                    <option value="` + personnage[i].id + `">` + personnage[i].nom + `</option>                    
                 `);              
                 
                 $("#joueur2").append(` 
-                    <option value="` + personnage[i].url + `">` + personnage[i].nom + `</option>                    
+                    <option value="` + personnage[i].id + `">` + personnage[i].nom + `</option>                    
                 `);
             }
         },
@@ -35,23 +40,53 @@ function getPersonnage() {
             console.log(erreur);
         }
     })
-
-    var personnage1 = $("option:joueur1").val();
-    var personnage2 = $("option:joueur2").val();
 }
 
-function selecImg1(url) {    
-    $(".img1").prop("src", url);
+function selecPersonnage1(id) {    
+    // Grace a l'id recuperé, on pioche dans _personnages les infos du perso
+    let perso1 = _personnages.find(perso1 => perso1.id == id);
+
+    $(".img1").prop("src", perso1.url);
+
+    newFight1 = {
+        nom: perso1.nom,
+        url: perso1.url,
+        pv: perso1.pv,
+        pa: perso1.pa
+      };
+      
 }
 
-function selecImg2(url) {
-    $(".img2").prop("src", url);
+function selecPersonnage2(id) {  
+    // Grace a l'id recuperé, on pioche dans _personnages les infos du perso
+    let perso2 = _personnages.find(perso2 => perso2.id == id);
+
+    $(".img2").prop("src", perso2.url);
+
+    newFight2 = {
+        nom: perso2.nom,
+        url: perso2.url,
+        pv: perso2.pv,
+        pa: perso2.pa
+      };
 }
 
-function launchFight() {
-    // setInterval(fight, 2000);
-    fight();
-}
+let launchFight1 = [];
+let launchFight2 = [];
 
 function fight() {
+   
+  // ON pousse / ajoute l'objet au tableau global
+  launchFight1.push(newFight1);
+  launchFight2.push(newFight2);
+
+  // On prepare le JSON pour le stockage dans le localStorage
+  let json1 = JSON.stringify(launchFight1); // Moulinette du JSON
+  let json2 = JSON.stringify(launchFight2); 
+
+  // On insert dans le localStorage
+  localStorage.setItem("personnage1", json1); // F12 -> Application -> localstorage
+  localStorage.setItem("personnage2", json2); // F12 -> Application -> localstorage
+
+  location = "index.html";
 }
